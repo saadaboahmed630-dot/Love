@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>رسالة</title>
+
+<style>
+body{
+font-family:Arial;
+background:#0f0f0f;
+color:white;
+text-align:center;
+padding-top:100px;
+}
+
+.box{
+background:#1e1e1e;
+padding:30px;
+border-radius:15px;
+width:85%;
+margin:auto;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:none;
+font-size:16px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#ff4d6d;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+#content{
+display:none;
+margin-top:30px;
+}
+
+.heart{
+font-size:50px;
+margin-bottom:15px;
+animation:beat 1s infinite;
+}
+
+@keyframes beat{
+0%{transform:scale(1);}
+25%{transform:scale(1.2);}
+40%{transform:scale(1);}
+60%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+#text{
+line-height:1.9;
+font-size:18px;
+white-space:pre-line;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>ادخلي الباسورد</h2>
+
+<input type="password" id="pass" placeholder="الباسورد">
+<br><br>
+
+<button onclick="checkPass()">دخول</button>
+
+<div id="content">
+
+<div class="heart">❤️‍🩹</div>
+
+<div id="text"></div>
+
+<br>
+
+<iframe width="100%" height="315"
+src="https://www.youtube.com/embed/jWUJGhDPeYQ?autoplay=1"
+frameborder="0"
+allow="autoplay"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<script>
+
+var message = `أنا مش بعرف أقول اللي جوايا بسهولة...
+
+بس الفترة الأخيرة حسيت إن في حاجات اتغيرت.
+
+بقى في هدوء غريب،
+وكلام أقل،
+واهتمام مش زي الأول.
+
+يمكن أنا فاهم غلط،
+بس إحساسي بيقول إن الثقة بقت
+مش زي زمان.
+
+مش بقول ده عشان أزعل،
+بس عشان اللي بينا يفضل حلو.
+
+05 / 11`;
+
+var i = 0;
+
+function typeWriter(){
+if(i < message.length){
+document.getElementById("text").innerHTML += message.charAt(i);
+i++;
+setTimeout(typeWriter,40);
+}
+}
+
+function checkPass(){
+
+var password="05/11";
+var userPass=document.getElementById("pass").value;
+
+if(userPass===password){
+
+document.getElementById("content").style.display="block";
+typeWriter();
+
+}else{
+alert("الباسورد غلط");
+}
+
+}
+
+</script>
+
+</body>
+  </html>
